@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <div class="logo">
+                <h1>Dashboard</h1>
+            </div>
+            <div class="header-actions">
+                <button class="btn" onclick="toggleForm()">Add New Item</button>
+            </div>
+        </header>
+
+        <!-- Form to upload image, title, and content -->
+        <div class="upload-form-container" id="uploadForm" style="display: none;">
+            <h2>Upload New Dashboard Item</h2>
+            <form id="uploadFormElement" onsubmit="addDashboardItem(event)">
+                <input type="file" id="imageInput" accept="image/*" required>
+                <input type="text" id="titleInput" placeholder="Enter title" required>
+                <textarea id="contentInput" placeholder="Enter content" required></textarea>
+                <button type="submit" class="btn">Add Item</button>
+            </form>
+            <button class="btn cancel" onclick="toggleForm()">Cancel</button>
+        </div>
+
+        <section class="dashboard" id="dashboard">
+            <!-- Dynamic dashboard items will be added here -->
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
